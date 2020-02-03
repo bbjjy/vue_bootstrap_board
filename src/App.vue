@@ -2,15 +2,24 @@
   <div id="app">
     <Header />
     <router-view/>
+    <pulse-loader :loading="$store.state.loading" :color="color" :size="size"></pulse-loader>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 export default {
   name: 'App',
+	data () {
+		return {
+      color: '#3AB982',
+      size: '30px',
+    }
+  },  
   components: {
     Header,
+    PulseLoader,
   }
 }
 </script>
